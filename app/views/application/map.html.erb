@@ -1,0 +1,16 @@
+<div class="alert alert-info" role="alert">
+  <h5>Real time Tracing Contour demo</h5>
+  <p>The map (with red buildings) is realtime converted to png image and sent to the controller action which returns the outer and inner contour of the red shapes. The action is call when you zoom or scroll. Mouse over the buildings to show the green calculated contours.</p>
+</div>
+
+<center>
+<%= tag.div id: 'google_map', class: 'map', data: {
+  controller: 'map',
+  map_target: 'map',
+  map_url_value: contour_path, 
+  map_key_value: ENV.fetch("GOOGLEMAPS_API_KEY")
+} %>
+</center>
+
+<h5>Json response (time in ms)</h5>
+<pre class="response"></pre>
